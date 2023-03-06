@@ -9,6 +9,12 @@ class MatcheController {
     const matches = await this.matcheService.getAll(inProgress);
     res.status(200).json(matches);
   }
+
+  async closedMathes(req: Request, res: Response): Promise<Response | void> {
+    const { id } = req.params;
+    await this.matcheService.closedMatches(Number(id));
+    res.status(200).json({ message: 'Finished' });
+  }
 }
 
 export default MatcheController;
