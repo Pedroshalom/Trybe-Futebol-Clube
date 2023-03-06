@@ -18,6 +18,13 @@ class UserService {
     const token = Token.build(email);
     return { token };
   }
+
+  async roleLogin(email :string): Promise<string | undefined> {
+    const user = await this.model.findOne({ where: { email } });
+    if (!user) return undefined;
+
+    return user.role;
+  }
 }
 
 export default UserService;
