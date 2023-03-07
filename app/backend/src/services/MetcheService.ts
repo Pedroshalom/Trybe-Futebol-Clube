@@ -35,7 +35,12 @@ class MatcheService {
     );
   }
 
-  async newMatch(homeTeamId: number, awayTeamId: number, homeTeamGoals: Date, awayTeamGoals: string)
+  async newMatch(
+    homeTeamId: number,
+    awayTeamId: number,
+    homeTeamGoals: number,
+    awayTeamGoals: number,
+  )
     : Promise<Matches> {
     return this.model.create({
       homeTeamId,

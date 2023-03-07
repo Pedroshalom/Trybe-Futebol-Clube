@@ -27,7 +27,7 @@ class MatcheController {
     const { homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals } = req.body;
     const match = await
     this.matcheService.newMatch(homeTeamId, awayTeamId, homeTeamGoals, awayTeamGoals);
-    res.status(200).json(match);
+    res.status(201).json(match);
   }
 }
 
