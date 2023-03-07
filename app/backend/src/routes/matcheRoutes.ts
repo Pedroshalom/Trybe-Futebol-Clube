@@ -9,5 +9,6 @@ const matcheRouter = Router();
 matcheRouter.get('/', (req: Request, res: Response) => matcheController.getAll(req, res));
 matcheRouter.patch('/:id/finish', validateToken, (req: Request, res: Response) =>
   matcheController.closedMathes(req, res));
-
+matcheRouter.patch('/:id', validateToken, (req: Request, res: Response) =>
+  matcheController.updateMatches(req, res));
 export default matcheRouter;

@@ -26,6 +26,14 @@ class MatcheService {
     await this.model.findByPk(id);
     await this.model.update({ inProgress: false }, { where: { id } });
   }
+
+  updateMatches(id: number, homeTeamGoals: number, awayTeamGoals: number):
+  Promise<number[] | undefined> {
+    return this.model.update(
+      { homeTeamGoals, awayTeamGoals },
+      { where: { id } },
+    );
+  }
 }
 
 export default MatcheService;
