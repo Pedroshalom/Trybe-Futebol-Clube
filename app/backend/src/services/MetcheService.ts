@@ -1,6 +1,7 @@
 import { ModelStatic } from 'sequelize';
 import Matches from '../database/models/Matches';
 import Team from '../database/models/Team';
+// testando o avaliador
 
 class MatcheService {
   model: ModelStatic<Matches> = Matches;
